@@ -18,6 +18,7 @@ export class AlertaPage implements OnInit {
   }
 
   async presentAlert() {
+    var num: number;
     const alert = await this.alertController.create({
       
       header: 'Soma automatica',
@@ -26,7 +27,12 @@ export class AlertaPage implements OnInit {
         {
           name: 'num1',
           type: 'number',
-          placeholder: 'Digite um numero'
+          placeholder: 'Digite um numero',
+          handler:(x)=>{
+            
+            
+          }
+          
         },
         {
           name: 'num2',
@@ -39,12 +45,17 @@ export class AlertaPage implements OnInit {
           role: 'cancel',
           
           handler: (x) => {
-            console.log('botao cancelar pressionado '+ x);
+            console.log('botao cancelar pressionado '+ x.num1);
+           
           }
         }, {
           text: 'somar',
-          handler: () => {
-            console.log('Botao ok pressionado');
+          handler: (x) => {
+            
+            var resultado = x.num1 + x.num2
+
+            await alert(resultado);
+            
           }
         }
       ]
@@ -54,5 +65,39 @@ export class AlertaPage implements OnInit {
 
    
   }
+
+  async alert() {
+    var num: number;
+    const alert = await this.alertController.create({
+      
+      header: 'Soma automatica',
+      subHeader: 'Realize uma soma:',
+      buttons: [
+        {
+          text: 'Cancelar',
+          role: 'cancel',
+          
+          handler: (x) => {
+            console.log('botao cancelar pressionado '+ x.num1);
+           
+          }
+        }, {
+          text: 'somar',
+          handler: (x) => {
+            
+            var resultado = x.num1 + x.num2
+
+            
+            
+          }
+        }
+      ]
+    });
+
+     alert.present();
+
+   
+  }
+      
 
 }
