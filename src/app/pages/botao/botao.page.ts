@@ -20,17 +20,17 @@ export class BotaoPage implements OnInit {
 
   async presentAlert() {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
+      // cssClass: 'alert-class',
       header: 'Alert',
       subHeader: 'A soma de 5 + 5 é 10',
       // message: 'A soma de 5 + 5 é 10',
       buttons: ['OK']
     });
 
-    await alert.present();
+     alert.present();
 
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+    // const { role } = await alert.onDidDismiss();
+    // console.log('onDidDismiss resolved with role', role);
   }
 
 }
