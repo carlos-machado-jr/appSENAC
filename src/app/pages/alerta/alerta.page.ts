@@ -13,13 +13,14 @@ export class AlertaPage implements OnInit {
   ngOnInit() {
   }
 
-  async exibirAlerta() {
+  async operacao(op) {
     var resultado;
     const alert = await this.alertController.create({
       
-      header: 'Soma automatica',
+      header: op,
       subHeader: 'Realize uma soma:',
       inputs: [
+        
         {
           name: 'num1',
           type: 'number',
@@ -40,20 +41,24 @@ export class AlertaPage implements OnInit {
           text: 'Cancelar',
           role: 'cancel',
         }, {
-          text: 'somar',
+          text: op,
           handler: (x) => {
             
             var num1 = parseInt(x.num1)
             var num2 = parseInt(x.num2)
 
             if(num1 || num2){
-              resultado = num1 + num2
-              this.alert(resultado);
+              switch (op){
+                case "somar": 
+                    console.log("somar")
+              }
+              // resultado = num1 + num2
+              // this.alert(resultado);
               
             } else{
 
               resultado = "nenhum dado informado"
-              this.exibirAlerta()
+              this.operacao(op)
               this.alert(resultado);
               
               
@@ -78,6 +83,41 @@ export class AlertaPage implements OnInit {
       header: 'Resultado',
       subHeader: resultado,
       buttons: ['OK']
+    });
+
+    alert.present();
+
+ 
+  }
+
+  async exibirAlerta() {
+    const alert = await this.alertController.create({
+      header: 'Escolha uma operação',
+      inputs: [
+        {
+          name: 'soma',
+          type: 'radio',
+          label: 'Somar',
+          value: 'somar',
+          checked: true
+        },
+        {
+          name: 'subtrair',
+          type: 'radio',
+          label: 'Subtrair',
+          value: 'subtrair'
+        }],
+      buttons: [{
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Avançar',
+          handler: (x) => {
+            this.operacao(x);
+          }
+        }
+      ]
     });
 
     alert.present();
