@@ -9,6 +9,7 @@ export class AppComponent {
     { title: 'home', url: 'home', icon: 'home' },
     { title: 'Botões', url: 'botao', icon: 'construct' },
     { title: 'alerta', url: 'alerta', icon: 'construct' },    
+    { title: 'Action Sheet', url: 'actionsheet', icon: 'construct' },    
     { title: 'Navegação', url: 'navegacao', icon: 'paper-plane' },
     
   ];

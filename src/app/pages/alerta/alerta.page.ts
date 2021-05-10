@@ -48,12 +48,18 @@ export class AlertaPage implements OnInit {
             var num2 = parseInt(x.num2)
 
             if(num1 || num2){
+            
               switch (op){
                 case "somar": 
-                    console.log("somar")
+                    resultado = num1 + num2
+                    this.alert(resultado);
+                case "subtrair":
+                    resultado = num1 - num2
+                    this.alert(resultado);
+                    break;                        
+              
               }
-              // resultado = num1 + num2
-              // this.alert(resultado);
+              
               
             } else{
 
