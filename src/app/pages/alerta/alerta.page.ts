@@ -13,12 +13,8 @@ export class AlertaPage implements OnInit {
   ngOnInit() {
   }
 
-  exibirBotao(){
-    this.presentAlert();
-  }
-
-  async presentAlert() {
-    var resultado: number;
+  async exibirAlerta() {
+    var resultado;
     const alert = await this.alertController.create({
       
       header: 'Soma automatica',
@@ -50,9 +46,20 @@ export class AlertaPage implements OnInit {
             var num1 = parseInt(x.num1)
             var num2 = parseInt(x.num2)
 
-            resultado = num1 + num2
+            if(num1 || num2){
+              resultado = num1 + num2
+              this.alert(resultado);
+              
+            } else{
 
-            this.alert(resultado);
+              resultado = "nenhum dado informado"
+              this.exibirAlerta()
+              this.alert(resultado);
+              
+              
+            }
+
+            
             
           }
         }
