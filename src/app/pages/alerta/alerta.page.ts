@@ -43,11 +43,6 @@ export class AlertaPage implements OnInit {
         {
           text: 'Cancelar',
           role: 'cancel',
-          
-          handler: (x) => {
-            console.log('botao cancelar pressionado '+ x.num1);
-           
-          }
         }, {
           text: 'somar',
           handler: (x) => {
@@ -73,17 +68,14 @@ export class AlertaPage implements OnInit {
 
   async alert(resultado) {
     const alert = await this.alertController.create({
-      cssClass: 'my-custom-class',
       header: 'Resultado',
       subHeader: resultado,
-      // message: 'A soma de 5 + 5 é 10',
       buttons: ['OK']
     });
 
-    await alert.present();
+    alert.present();
 
-    const { role } = await alert.onDidDismiss();
-    console.log('onDidDismiss resolved with role', role);
+ 
   }
   
       
