@@ -13,6 +13,53 @@ export class AlertaPage implements OnInit {
   ngOnInit() {
   }
 
+  async exibirAlerta() {
+    const alert = await this.alertController.create({
+      header: 'Escolha uma operação',
+      inputs: [
+        {
+          name: 'soma',
+          type: 'radio',
+          label: 'Somar',
+          value: 'somar',
+          checked: true
+        },
+        {
+          name: 'subtrair',
+          type: 'radio',
+          label: 'Subtrair',
+          value: 'subtrair'
+        },
+        {
+          name: 'multiplicacao',
+          type: 'radio',
+          label: 'Multiplicação',
+          value: 'multiplicacao'
+        },
+        {
+          name: 'divisao',
+          type: 'radio',
+          label: 'Divisão',
+          value: 'divisao'
+        }],
+      buttons: [{
+          text: 'Cancelar',
+          role: 'cancel',
+        },
+        {
+          text: 'Avançar',
+          handler: (x) => {
+            this.operacao(x);
+          }
+        }
+      ]
+    });
+
+    alert.present();
+
+ 
+  }
+
   async operacao(op) {
     var resultado;
     const alert = await this.alertController.create({
@@ -24,12 +71,7 @@ export class AlertaPage implements OnInit {
         {
           name: 'num1',
           type: 'number',
-          placeholder: 'Digite um numero',
-          handler:(x)=>{
-            
-            
-          }
-          
+          placeholder: 'Digite um numero'        
         },
         {
           name: 'num2',
@@ -105,52 +147,7 @@ export class AlertaPage implements OnInit {
  
   }
 
-  async exibirAlerta() {
-    const alert = await this.alertController.create({
-      header: 'Escolha uma operação',
-      inputs: [
-        {
-          name: 'soma',
-          type: 'radio',
-          label: 'Somar',
-          value: 'somar',
-          checked: true
-        },
-        {
-          name: 'subtrair',
-          type: 'radio',
-          label: 'Subtrair',
-          value: 'subtrair'
-        },
-        {
-          name: 'multiplicacao',
-          type: 'radio',
-          label: 'Multiplicação',
-          value: 'multiplicacao'
-        },
-        {
-          name: 'divisao',
-          type: 'radio',
-          label: 'Divisão',
-          value: 'divisao'
-        }],
-      buttons: [{
-          text: 'Cancelar',
-          role: 'cancel',
-        },
-        {
-          text: 'Avançar',
-          handler: (x) => {
-            this.operacao(x);
-          }
-        }
-      ]
-    });
-
-    alert.present();
-
  
-  }
   
       
 
