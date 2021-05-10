@@ -18,7 +18,7 @@ export class AlertaPage implements OnInit {
   }
 
   async presentAlert() {
-    var num: number;
+    var resultado: number;
     const alert = await this.alertController.create({
       
       header: 'Soma automatica',
@@ -52,9 +52,12 @@ export class AlertaPage implements OnInit {
           text: 'somar',
           handler: (x) => {
             
-            var resultado = x.num1 + x.num2
+            var num1 = parseInt(x.num1)
+            var num2 = parseInt(x.num2)
 
-            await alert(resultado);
+            resultado = num1 + num2
+
+            this.alert(resultado);
             
           }
         }
@@ -66,38 +69,23 @@ export class AlertaPage implements OnInit {
    
   }
 
-  async alert() {
-    var num: number;
+
+
+  async alert(resultado) {
     const alert = await this.alertController.create({
-      
-      header: 'Soma automatica',
-      subHeader: 'Realize uma soma:',
-      buttons: [
-        {
-          text: 'Cancelar',
-          role: 'cancel',
-          
-          handler: (x) => {
-            console.log('botao cancelar pressionado '+ x.num1);
-           
-          }
-        }, {
-          text: 'somar',
-          handler: (x) => {
-            
-            var resultado = x.num1 + x.num2
-
-            
-            
-          }
-        }
-      ]
+      cssClass: 'my-custom-class',
+      header: 'Resultado',
+      subHeader: resultado,
+      // message: 'A soma de 5 + 5 é 10',
+      buttons: ['OK']
     });
 
-     alert.present();
+    await alert.present();
 
-   
+    const { role } = await alert.onDidDismiss();
+    console.log('onDidDismiss resolved with role', role);
   }
+  
       
 
 }
