@@ -18,7 +18,7 @@ export class AlertaPage implements OnInit {
     const alert = await this.alertController.create({
       
       header: op,
-      subHeader: 'Realize uma soma:',
+      subHeader: 'Realize uma operação:',
       inputs: [
         
         {
@@ -53,10 +53,19 @@ export class AlertaPage implements OnInit {
                 case "somar": 
                     resultado = num1 + num2
                     this.alert(resultado);
+                    break;
                 case "subtrair":
                     resultado = num1 - num2
                     this.alert(resultado);
-                    break;                        
+                    break;   
+                case "multiplicacao":
+                    resultado = num1 * num2
+                    this.alert(resultado);
+                    break;  
+                case "divisao":
+                    resultado = num1 / num2
+                    this.alert(resultado);
+                    break;                       
               
               }
               
@@ -112,6 +121,18 @@ export class AlertaPage implements OnInit {
           type: 'radio',
           label: 'Subtrair',
           value: 'subtrair'
+        },
+        {
+          name: 'multiplicacao',
+          type: 'radio',
+          label: 'Multiplicação',
+          value: 'multiplicacao'
+        },
+        {
+          name: 'divisao',
+          type: 'radio',
+          label: 'Divisão',
+          value: 'divisao'
         }],
       buttons: [{
           text: 'Cancelar',
