@@ -8,54 +8,84 @@
 </ion-header>
 
 <ion-content>
-  <h3>Exemplos de botões do ionic</h3>
-  <ion-button>Padrão</ion-button>
-  <ion-button href="#">Âncora</ion-button>
-  <ion-button (click)="exemplo()">Evento</ion-button>
-  <h3>Botão com tema</h3>
 
-  <ion-button color="danger">Danger</ion-button>
+  <section>
+    <header>
+      <h3>Exemplos de botões do ionic</h3>
+    </header>
+    <ion-button>Padrão</ion-button>
+    <ion-button href="#">Âncora</ion-button>
+    <ion-button (click)="exemplo()">Evento</ion-button>
+  </section>
 
-  <h3>Outros temas disponíveis</h3>
+  <section>
+      <header>
+           <h3>Botão com tema</h3>
+      </header>
+      <ion-button color="danger">Danger</ion-button>
+  </section>
 
-  <ion-button color="primary">Primary</ion-button>
-  <ion-button color="secondary">Secondary</ion-button>
-  <ion-button color="tertiary">Tertiary</ion-button>
-  <ion-button color="success">Success</ion-button>
-  <ion-button color="warning">Warning</ion-button>
-  <ion-button color="danger">Danger</ion-button>
-  <ion-button color="dark">Dark</ion-button>
-  <ion-button color="medium">Medium</ion-button>
-  <ion-button color="light">Light</ion-button>
+  
+  <section>
+
+      <header>
+          <h3>Outros temas disponíveis</h3>
+      </header>
+
+      <ion-button color="primary">Primary</ion-button>
+      <ion-button color="secondary">Secondary</ion-button>
+      <ion-button color="tertiary">Tertiary</ion-button>
+      <ion-button color="success">Success</ion-button>
+      <ion-button color="warning">Warning</ion-button>
+      <ion-button color="danger">Danger</ion-button>
+      <ion-button color="dark">Dark</ion-button>
+      <ion-button color="medium">Medium</ion-button>
+      <ion-button color="light">Light</ion-button>
+
+  </section>
+
+  <section>
+      <header>
+          <h3>Outros formatos</h3>
+      </header>
+
+      <ion-button expand="full">Expand + Full</ion-button>
+      <ion-button expand="block">Expand + Block</ion-button>
+      <ion-button fill="outline">Fill + Outline</ion-button>
+      <ion-button fill="clear">Fill + Clear</ion-button>
+      <ion-button fill="solid">Fill + Solid</ion-button>
+  </section>
+
+  <section>
+      <header>
+          <h3>Botão com icone</h3>
+      </header>
 
 
-  <h3>Outros formatos</h3>
+      <ion-button>
+        <ion-icon slot="start" name="star"></ion-icon>
+        ícone a esquerda
+      </ion-button>
 
-  <ion-button expand="full">Expand + Full</ion-button>
-  <ion-button expand="block">Expand + Block</ion-button>
-  <ion-button fill="outline">Fill + Outline</ion-button>
-  <ion-button fill="clear">Fill + Clear</ion-button>
-  <ion-button fill="solid">Fill + Solid</ion-button>
+      <ion-button>
+        <ion-icon slot="end" name="star"></ion-icon>
+        ícone a direita
+      </ion-button>
+  </section>
 
 
-  <h3>Botão com icone</h3>
 
 
-  <ion-button>
-    <ion-icon slot="start" name="star"></ion-icon>
-    ícone a esquerda
-  </ion-button>
 
-  <ion-button>
-    <ion-icon slot="end" name="star"></ion-icon>
-    ícone a direita
-  </ion-button>
+  <section>
+      <header>
+          <h3>Botões com tamanho</h3>
+      </header>
 
-  <h3>Botões com tamanho</h3>
-
-  <ion-button>Padrão</ion-button>  
-  <ion-button size="small">Small</ion-button>  
-  <ion-button size="large">Large</ion-button>
+      <ion-button>Padrão</ion-button>  
+      <ion-button size="small">Small</ion-button>  
+      <ion-button size="large">Large</ion-button>
+  </section>
   
 
 
