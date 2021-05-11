@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar color="primary">
+        <ion-buttons>
+        <ion-menu-button></ion-menu-button>
+          
+        </ion-buttons>
+    <ion-title>badge</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <ion-list-header>Badges</ion-list-header>
+        <ion-item>
+            <ion-label>Notificações</ion-label>
+            <ion-badge slot="end"> {{ notificacoes }} </ion-badge>
+        </ion-item>
+        <ion-item>
+            <ion-label>Usuarios</ion-label>
+            <ion-badge slot="end" color="success">{{ usuarios }}</ion-badge>
+        </ion-item>
+    </ion-list>
+</ion-content>

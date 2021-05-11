@@ -30,6 +30,10 @@ const routes: Routes = [
   {
     path: 'actionsheet',
     loadChildren: () => import('./pages/actionsheet/actionsheet.module').then( m => m.ActionsheetPageModule)
+  },
+  {
+    path: 'badge',
+    loadChildren: () => import('./pages/badge/badge.module').then( m => m.BadgePageModule)
   }
 ];
 
